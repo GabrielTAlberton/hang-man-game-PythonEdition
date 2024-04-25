@@ -4,7 +4,7 @@ from turtle import Turtle
 
 
 # class definition #
-class Game_Screen(Turtle):
+class GameScreen(Turtle):
 
     # super class to use screen configuration from the turtle library #
     def __init__(self):
