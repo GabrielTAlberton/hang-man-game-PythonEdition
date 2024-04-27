@@ -23,6 +23,7 @@ class GameCoreFunctions(Turtle):
         self.guess = ""
         self.wrong_letters = []
         self.screen_counter = 1
+        self.screen_func = GameScreen()
 
     # input window to player guess a letter #
     def guess_input(self):
@@ -33,14 +34,24 @@ class GameCoreFunctions(Turtle):
             prompt="Guess a letter:"
         ).lower()
 
+    # game mysterious word display UI update #
     def curio_update(self):
         self.mysterious_word_curio = f"{' '.join(self.mysterious_word_display)}"
 
+    # replace the _ placeholder to the right letter guessed #
     def right_guess_curio_update(self):
         for index_pos, letter in enumerate(self.mysterious_word_display):
             if self.guess == letter:
                 self.mysterious_word_display[index_pos] = letter
                 self.curio_update()
+
+    # update thresholds if player guesses wrong #
+    def wrong_guess_multi_update(self):
+        if self.guess not in self.wrong_letters:
+            self.wrong_letters.append(self.guess)
+            self.screen_func.change_image_wrong_guess(self.screen_counter)
+            self.screen_counter += 1
+            self.tries -= 1
 
 
 # wrd = random.choice(word_list)
