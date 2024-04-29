@@ -10,10 +10,11 @@ class GameScreen(Turtle):
     def __init__(self):
         super().__init__()
         self.hideturtle()
+        self.penup()
         game_screen = turtle.Screen()
         game_screen.title("The Hangman Game")
         game_screen.setup(1200, 650)
-        self.background_image = "hang-man-game-rules.gif"
+        self.background_image = "hang-man-game-0.gif"
         turtle.addshape(self.background_image)
         turtle.shape(self.background_image)
 
