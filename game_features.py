@@ -61,13 +61,3 @@ class GameCoreFunctions(Turtle):
         self.mysterious_word_display = []
         self.mysterious_word_display = [letter for letter in self.chosen_word]
         self.curio_update()
-
-# wrd = random.choice(word_list)
-# print(wrd)
-# wrd_display = ["_" for letter in wrd]
-# print(wrd_display)
-# wrd_curio = f"{' '.join(wrd_display)}"
-# print(wrd_curio)
-# wrd_display[2] = "G"
-# wrd_curio = f"{' '.join(wrd_display)}"
-# print(wrd_curio)
